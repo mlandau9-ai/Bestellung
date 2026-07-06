@@ -16,97 +16,64 @@
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:var(--cream); color:var(--ink);
-    padding-bottom:env(safe-area-inset-bottom);
-  }
-  /* Header */
-  header{
-    position:sticky; top:0; z-index:20;
-    background:var(--espresso); color:#f4ead9;
-    padding:calc(env(safe-area-inset-top) + 12px) 16px 0;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
-  }
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--cream); color:var(--ink); padding-bottom:env(safe-area-inset-bottom);}
+  header{position:sticky; top:0; z-index:20; background:var(--espresso); color:#f4ead9;
+    padding:calc(env(safe-area-inset-top) + 12px) 16px 0; box-shadow:0 2px 10px rgba(0,0,0,.15);}
   .brand{display:flex; align-items:baseline; gap:8px; margin-bottom:10px}
   .brand b{font-size:19px; letter-spacing:.3px}
   .brand span{font-size:12px; color:#c9b79c}
   .seg{display:flex; background:rgba(255,255,255,.08); border-radius:12px; padding:3px; gap:3px}
-  .seg button{
-    flex:1; border:0; background:transparent; color:#e9dcc6;
-    font-size:14px; font-weight:600; padding:9px 6px; border-radius:9px;
-  }
+  .seg button{flex:1; border:0; background:transparent; color:#e9dcc6; font-size:14px;
+    font-weight:600; padding:9px 6px; border-radius:9px;}
   .seg button.on{background:var(--gold); color:#2a1c12}
   .tabs{display:flex; gap:22px; margin-top:12px}
-  .tabs button{
-    border:0; background:transparent; color:#c3ad8d; font-size:15px;
-    font-weight:600; padding:10px 0 12px; position:relative;
-  }
+  .tabs button{border:0; background:transparent; color:#c3ad8d; font-size:15px; font-weight:600;
+    padding:10px 0 12px; position:relative;}
   .tabs button.on{color:#fff}
-  .tabs button.on::after{
-    content:""; position:absolute; left:0; right:0; bottom:0; height:3px;
-    background:var(--gold); border-radius:3px 3px 0 0;
-  }
-  .sub{font-size:12px; color:#b7a punt; }
-  /* Content */
+  .tabs button.on::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px;
+    background:var(--gold); border-radius:3px 3px 0 0;}
   main{padding:14px 12px 120px; max-width:640px; margin:0 auto}
-  .cathead{
-    display:flex; align-items:center; gap:8px;
-    margin:18px 4px 8px; font-size:12px; font-weight:700;
-    letter-spacing:.8px; text-transform:uppercase; color:var(--brown);
-  }
+  .hint{font-size:12.5px; color:var(--muted); margin:2px 4px 10px; line-height:1.4}
+  .cathead{display:flex; align-items:center; gap:8px; margin:18px 4px 8px; font-size:12px;
+    font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--brown);}
   .cathead::after{content:""; flex:1; height:1px; background:var(--line)}
-  .card{
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px;
     padding:12px 12px 12px 14px; margin-bottom:9px;
-    display:grid; grid-template-columns:1fr auto; gap:6px 10px; align-items:center;
-  }
+    display:grid; grid-template-columns:1fr auto; gap:8px 10px; align-items:center;}
   .card.need{border-color:var(--gold); box-shadow:0 0 0 2px rgba(201,162,39,.16)}
   .nm{font-size:15px; font-weight:600; line-height:1.25}
   .meta{font-size:12px; color:var(--muted); margin-top:3px}
   .meta .pr{color:var(--brown); font-weight:600}
-  .stepper{display:flex; align-items:center; gap:0; justify-self:end}
-  .stepper button{
-    width:40px; height:40px; border:1px solid var(--line); background:#fff;
-    font-size:22px; font-weight:600; color:var(--brown); border-radius:11px;
-  }
+  .stepper{display:flex; align-items:center; justify-self:end}
+  .stepper button{width:40px; height:40px; border:1px solid var(--line); background:#fff;
+    font-size:22px; font-weight:600; color:var(--brown); border-radius:11px;}
   .stepper button:active{background:var(--cream)}
-  .stepper input{
-    width:46px; height:40px; text-align:center; border:0; background:transparent;
-    font-size:18px; font-weight:700; color:var(--ink); margin:0 2px;
-    -moz-appearance:textfield;
-  }
+  .stepper input{width:48px; height:40px; text-align:center; border:0; background:transparent;
+    font-size:19px; font-weight:800; color:var(--ink); margin:0 2px; -moz-appearance:textfield;}
   .stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none}
-  .order-badge{
-    grid-column:1 / -1; justify-self:start; margin-top:2px;
-    font-size:12.5px; font-weight:700; color:var(--good);
-    background:var(--good-bg); padding:3px 9px; border-radius:20px;
-  }
-  .soll-edit{
-    grid-column:1 / -1; display:flex; align-items:center; gap:6px;
-    font-size:12px; color:var(--muted); margin-top:2px;
-  }
-  .soll-edit input{
-    width:44px; height:26px; text-align:center; border:1px solid var(--line);
-    border-radius:7px; font-size:13px; font-weight:600; color:var(--brown); background:#fff;
-  }
-  /* Bestellung view */
+  .suggest{grid-column:1 / -1; justify-self:start; margin-top:1px; display:flex; align-items:center; gap:8px}
+  .chip{border:1px dashed var(--line); background:#fff; color:var(--muted); font-size:12px;
+    font-weight:600; padding:5px 11px; border-radius:20px;}
+  .chip b{color:var(--brown)}
+  .chip:active{background:var(--cream)}
+  .clr{border:0; background:transparent; color:var(--muted); font-size:12px; font-weight:600; padding:5px 4px;}
   .order-wrap{padding-top:4px}
-  .order-empty{text-align:center; color:var(--muted); padding:60px 20px}
+  .order-empty{text-align:center; color:var(--muted); padding:56px 20px}
   .order-empty b{display:block; color:var(--ink); font-size:16px; margin-bottom:6px}
-  .oline{
-    display:flex; justify-content:space-between; align-items:baseline;
-    background:var(--card); border:1px solid var(--line); border-radius:12px;
-    padding:11px 13px; margin-bottom:8px;
-  }
-  .oline .q{font-weight:800; color:var(--brown); font-size:16px; min-width:52px}
-  .oline .t{flex:1; font-size:14.5px; font-weight:600}
-  .oline .g{font-size:12px; color:var(--muted)}
-  .oline .s{font-size:13px; color:var(--muted); font-weight:600}
-  .total{
-    display:flex; justify-content:space-between; align-items:center;
-    margin:14px 2px 2px; font-size:15px;
-  }
+  .oline{display:flex; align-items:center; gap:10px; background:var(--card);
+    border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-bottom:8px;}
+  .oline .t{flex:1; font-size:14.5px; font-weight:600; line-height:1.25}
+  .oline .g{font-size:12px; color:var(--muted); margin-top:2px}
+  .oline .s{font-size:13px; color:var(--muted); font-weight:600; white-space:nowrap}
+  .ministep{display:flex; align-items:center; flex:0 0 auto}
+  .ministep button{width:34px; height:34px; border:1px solid var(--line); background:#fff;
+    font-size:19px; font-weight:600; color:var(--brown); border-radius:9px;}
+  .ministep button:active{background:var(--cream)}
+  .ministep input{width:38px; height:34px; text-align:center; border:0; background:transparent;
+    font-size:17px; font-weight:800; color:var(--ink); margin:0 1px; -moz-appearance:textfield;}
+  .ministep input::-webkit-outer-spin-button,.ministep input::-webkit-inner-spin-button{-webkit-appearance:none}
+  .total{display:flex; justify-content:space-between; align-items:center; margin:14px 2px 2px; font-size:15px}
   .total b{font-size:20px; color:var(--espresso)}
   .actions{position:fixed; left:0; right:0; bottom:0; z-index:15;
     padding:12px 12px calc(env(safe-area-inset-bottom) + 12px);
@@ -116,14 +83,10 @@
   .btn.primary{background:var(--gold); color:#2a1c12}
   .btn.primary:active{background:var(--gold-dk)}
   .btn.ghost{background:#fff; color:var(--brown); border:1px solid var(--line); flex:0 0 auto; padding:15px 18px}
-  .toast{
-    position:fixed; left:50%; bottom:96px; transform:translateX(-50%) translateY(20px);
-    background:var(--espresso); color:#fff; padding:11px 18px; border-radius:24px;
-    font-size:14px; font-weight:600; opacity:0; pointer-events:none; transition:.25s; z-index:30;
-  }
+  .toast{position:fixed; left:50%; bottom:96px; transform:translateX(-50%) translateY(20px);
+    background:var(--espresso); color:#fff; padding:11px 18px; border-radius:24px; font-size:14px;
+    font-weight:600; opacity:0; pointer-events:none; transition:.25s; z-index:30;}
   .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
-  .foot{text-align:center; color:var(--muted); font-size:11px; margin-top:24px; padding:0 20px}
-  .foot a{color:var(--brown)}
 </style>
 </head>
 <body>
@@ -131,8 +94,8 @@
   <div class="brand"><b>Kugel · Bestellung</b><span id="subline"></span></div>
   <div class="seg" id="filialeSeg"></div>
   <div class="tabs" id="tabSeg">
-    <button data-tab="count" class="on">Zählen</button>
-    <button data-tab="order">Bestellung</button>
+    <button data-tab="count" class="on">Bestellen</button>
+    <button data-tab="order">Übersicht</button>
   </div>
 </header>
 <main id="main"></main>
@@ -140,48 +103,33 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const DATA = {"prod": {"name": "Produktion", "sub": "Tannenstraße 19 · Kd 66975", "items": [{"art": "0041631", "bez": "40 Glutenfr. Hörnchen FJ103SG", "geb": "KT", "soll": 1, "preis": 29.9, "stand": "28.05", "cat": "occ"}, {"art": "0060704", "bez": "6 OATLY Haferdrink Barista Edition 1l", "geb": "KT", "soll": 4, "preis": 11.8, "stand": "30.06", "cat": "occ"}, {"art": "0009533", "bez": "Cal.Kuvert.Call.70/30/38", "geb": "SA (10kg)", "soll": 2, "preis": 118.9, "stand": "08.06", "cat": "occ"}, {"art": "0027344", "bez": "Clear Cups klar 400ml inkl. EWK", "geb": "KT (800St)", "soll": 1, "preis": 80.97, "stand": "30.06", "cat": "occ"}, {"art": "0027391", "bez": "Deckel, weiß für 200ml inkl. EWK", "geb": "PG (100St)", "soll": 10, "preis": 2.66, "stand": "11.05", "cat": "occ"}, {"art": "0005321", "bez": "Dextrose Meritose 200", "geb": "SA (25kg)", "soll": 2, "preis": 37.25, "stand": "06.07", "cat": "reg"}, {"art": "0027349", "bez": "DOM-Deckel klar mit Loch inkl. EWK", "geb": "KT (800St)", "soll": 1, "preis": 41.31, "stand": "30.06", "cat": "occ"}, {"art": "0103466", "bez": "Eisbecher weiss GE-4M lizenziert", "geb": "KT (900St)", "soll": 1, "preis": 113.81, "stand": "28.05", "cat": "occ"}, {"art": "0103461", "bez": "Eisbecher weiss GE-8 lizenziert", "geb": "KT (2000St)", "soll": 1, "preis": 125.9, "stand": "30.06", "cat": "occ"}, {"art": "0135181", "bez": "Eisbecher „Kugel Eismanufaktur\" 10MG (1400)", "geb": "KT (1400St)", "soll": 2, "preis": 102.63, "stand": "30.06", "cat": "occ"}, {"art": "0135184", "bez": "Eisbecher „Kugel Eismanufaktur\" 8B (2000)", "geb": "KT (2000St)", "soll": 1, "preis": 121.36, "stand": "08.06", "cat": "occ"}, {"art": "0293595", "bez": "Eisbehälter 360x250x80mm 5,6L Edelstahl", "geb": "ST", "soll": 100, "preis": 11.95, "stand": "31.05", "cat": "occ"}, {"art": "0293611", "bez": "Eisspachtel gelb transparent 260mm", "geb": "ST", "soll": 5, "preis": 8.45, "stand": "13.05", "cat": "occ"}, {"art": "0042200", "bez": "Eisspaten Reusable bunt 9,5cm 1kg", "geb": "BT (1kg)", "soll": 13, "preis": 6.75, "stand": "30.06", "cat": "occ"}, {"art": "0000104", "bez": "F+S Sahne 33% 5kg Eimer", "geb": "EI (5kg)", "soll": 17, "preis": 13.5, "stand": "06.07", "cat": "reg"}, {"art": "0000684", "bez": "Frischkäse Doppelrahm", "geb": "EI (10kg)", "soll": 2, "preis": 48.0, "stand": "08.06", "cat": "occ"}, {"art": "0005323", "bez": "Glukose Glucidex G290", "geb": "SA (25kg)", "soll": 2, "preis": 27.25, "stand": "17.06", "cat": "occ"}, {"art": "0005384", "bez": "Glukose Glucidex IT33", "geb": "SA (25kg)", "soll": 1, "preis": 41.0, "stand": "08.06", "cat": "occ"}, {"art": "0005322", "bez": "Glukose Glucodry G300", "geb": "SA (25kg)", "soll": 2, "preis": 41.0, "stand": "06.07", "cat": "reg"}, {"art": "0000437", "bez": "H-Milch 3,5% Prago 10L Box", "geb": "PG (10L)", "soll": 37, "preis": 7.9, "stand": "06.07", "cat": "reg"}, {"art": "0034510", "bez": "Handtücher 25x23cm, 1-lagig, Natur (5000St)", "geb": "KT", "soll": 1, "preis": 20.2, "stand": "28.05", "cat": "occ"}, {"art": "0004723", "bez": "Inulin 25kg", "geb": "SA (25kg)", "soll": 1, "preis": 102.5, "stand": "30.06", "cat": "reg"}, {"art": "0042220", "bez": "Kaffeelöffel Reusable bunt 13cm (3000St)", "geb": "KT", "soll": 1, "preis": 42.0, "stand": "30.06", "cat": "occ"}, {"art": "0009708", "bez": "Kakao Rich Terracotta 5kg 20-22%", "geb": "PG (5kg)", "soll": 4, "preis": 64.65, "stand": "08.06", "cat": "occ"}, {"art": "0010569", "bez": "Kond.Raspel-Schoko Grob Bitter SRG", "geb": "KT (5kg)", "soll": 2, "preis": 69.45, "stand": "17.06", "cat": "occ"}, {"art": "0000692", "bez": "Mertens Joghurt 3,5% - stichfest -", "geb": "EI (10kg)", "soll": 7, "preis": 15.4, "stand": "06.07", "cat": "occ"}, {"art": "0034646", "bez": "Mussana Microclean Reiniger 1l", "geb": "FL", "soll": 4, "preis": 9.29, "stand": "30.06", "cat": "occ"}, {"art": "0034550", "bez": "Müllbeutel, blau 120L (25)", "geb": "RO", "soll": 10, "preis": 4.2, "stand": "28.05", "cat": "occ"}, {"art": "0224149", "bez": "Nitrilhandschuhe, schwarz \"L\" ungep. (100)", "geb": "PG", "soll": 2, "preis": 5.04, "stand": "28.05", "cat": "occ"}, {"art": "0027524", "bez": "Papier-Trinkhalme schwarz 230/8mm (150)", "geb": "BT (150St)", "soll": 5, "preis": 2.9, "stand": "17.06", "cat": "reg"}, {"art": "0011408", "bez": "Pistazien gehackt 2-4mm", "geb": "KG", "soll": 3, "preis": 34.29, "stand": "30.06", "cat": "occ"}, {"art": "0038641", "bez": "ProHaag Flächendesinfektion Ipades 70 1L", "geb": "FL", "soll": 2, "preis": 8.5, "stand": "28.05", "cat": "occ"}, {"art": "0041942", "bez": "Prova Vanille gemahlen 200gr.", "geb": "DS (0,2kg)", "soll": 1, "preis": 31.8, "stand": "28.05", "cat": "occ"}, {"art": "0042436", "bez": "Pulisano Bourbon-Vanille fein gem. 1kg", "geb": "BT (1kg)", "soll": 1, "preis": 110.0, "stand": "20.05", "cat": "occ"}, {"art": "0042442", "bez": "Pulisano Cashewmus", "geb": "EI (3kg)", "soll": 3, "preis": 42.6, "stand": "06.07", "cat": "occ"}, {"art": "0042393", "bez": "Pulisano Erdnussmark 100%", "geb": "DS (5kg)", "soll": 3, "preis": 49.75, "stand": "30.06", "cat": "occ"}, {"art": "0010745", "bez": "RB Haselnusskrokant 40% Nussanteil", "geb": "EI (3,5kg)", "soll": 1, "preis": 39.8, "stand": "28.05", "cat": "occ"}, {"art": "0010667", "bez": "Regeneriersalz grob 6x2kg", "geb": "KT", "soll": 2, "preis": 18.27, "stand": "30.06", "cat": "occ"}, {"art": "0005280", "bez": "Regenit Regeneriersalz", "geb": "SA (25kg)", "soll": 4, "preis": 10.5, "stand": "28.05", "cat": "occ"}, {"art": "0028277", "bez": "Rollenpapier „Kugel Eismanufaktur\" 10kg", "geb": "ST (10kg)", "soll": 1, "preis": 50.55, "stand": "11.05", "cat": "occ"}, {"art": "0032300", "bez": "Sahneabdeckpapier 12x18", "geb": "PG (1000St)", "soll": 3, "preis": 4.47, "stand": "26.05", "cat": "occ"}, {"art": "0032310", "bez": "Sahneabdeckpapier 24x36", "geb": "PG (1000St)", "soll": 4, "preis": 17.27, "stand": "08.06", "cat": "occ"}, {"art": "0031125", "bez": "Servietten weiss 1/4F. 33x33 (500)", "geb": "PG (500St)", "soll": 10, "preis": 4.79, "stand": "28.05", "cat": "occ"}, {"art": "0009874", "bez": "Sprüh-Magermilchpulver 1% NG", "geb": "SA (25kg)", "soll": 2, "preis": 101.0, "stand": "30.06", "cat": "occ"}, {"art": "0009880", "bez": "Sprüh-Magermilchpulver 1% VH", "geb": "SA (25kg)", "soll": 1, "preis": 97.0, "stand": "28.05", "cat": "occ"}, {"art": "0000958", "bez": "TK-Beerenmix (10kg)", "geb": "KT (10kg)", "soll": 6, "preis": 40.2, "stand": "06.07", "cat": "occ"}, {"art": "0000955", "bez": "TK-Beerenmix (2,5kg)", "geb": "PG (2,5kg)", "soll": 9, "preis": 10.2, "stand": "28.05", "cat": "occ"}, {"art": "0002242", "bez": "TK-CA Bio-Zitronensaft (EI)", "geb": "EI (10kg)", "soll": 4, "preis": 44.1, "stand": "06.07", "cat": "reg"}, {"art": "0002241", "bez": "TK-CA Bio-Zitronensaft 12x1kg", "geb": "KT (12kg)", "soll": 2, "preis": 52.92, "stand": "28.05", "cat": "occ"}, {"art": "0002733", "bez": "TK-Erdbeeren Ägypten 10kg", "geb": "KT (10kg)", "soll": 5, "preis": 25.4, "stand": "06.07", "cat": "reg"}, {"art": "0002272", "bez": "TK-PT Himbeeren Willamette gez. 10%", "geb": "KT (6kg)", "soll": 6, "preis": 55.92, "stand": "06.07", "cat": "occ"}, {"art": "0002088", "bez": "TK-RF Zitronensaft 500g", "geb": "KT (12PG)", "soll": 2, "preis": 36.72, "stand": "08.06", "cat": "occ"}, {"art": "0034540", "bez": "Toilettenpap. 3-Lg. (8 Rollen)", "geb": "PG", "soll": 7, "preis": 4.2, "stand": "08.06", "cat": "occ"}, {"art": "0002750", "bez": "weiße Schokoraspel (Parmesan)", "geb": "KT (5kg)", "soll": 2, "preis": 50.2, "stand": "29.06", "cat": "occ"}, {"art": "0005306", "bez": "Weißzucker EU (NZ)", "geb": "SA (25kg)", "soll": 9, "preis": 18.5, "stand": "30.06", "cat": "reg"}, {"art": "0040790", "bez": "Zuckerstreusel, bunt", "geb": "PG (1kg)", "soll": 12, "preis": 6.45, "stand": "28.05", "cat": "occ"}]}, "verk": {"name": "Verkauf", "sub": "Nordstraße 117 · Kd 66974", "items": [{"art": "0041755", "bez": "220 Schoko-Röllchen", "geb": "PG", "soll": 3, "preis": 17.49, "stand": "22.06", "cat": "occ"}, {"art": "0060704", "bez": "6 OATLY Haferdrink Barista Edition 1l", "geb": "KT", "soll": 3, "preis": 11.8, "stand": "20.05", "cat": "occ"}, {"art": "0040755", "bez": "Amaretti Plätzchen", "geb": "KT (2kg)", "soll": 1, "preis": 18.2, "stand": "20.05", "cat": "occ"}, {"art": "0009533", "bez": "Cal.Kuvert.Call.70/30/38", "geb": "SA (10kg)", "soll": 1, "preis": 118.9, "stand": "24.06", "cat": "occ"}, {"art": "0027344", "bez": "Clear Cups klar 400ml inkl. EWK", "geb": "KT (800St)", "soll": 1, "preis": 80.97, "stand": "29.06", "cat": "occ"}, {"art": "0005321", "bez": "Dextrose Meritose 200", "geb": "SA (25kg)", "soll": 2, "preis": 37.25, "stand": "24.06", "cat": "occ"}, {"art": "0027349", "bez": "DOM-Deckel klar mit Loch inkl. EWK", "geb": "KT (800St)", "soll": 1, "preis": 41.31, "stand": "29.06", "cat": "occ"}, {"art": "0042110", "bez": "Eisbecher 105ml 8B Flach lizenziert", "geb": "KT (2000St)", "soll": 1, "preis": 125.9, "stand": "15.06", "cat": "occ"}, {"art": "0103461", "bez": "Eisbecher weiss GE-8 lizenziert", "geb": "KT (2000St)", "soll": 2, "preis": 125.9, "stand": "24.06", "cat": "occ"}, {"art": "0135181", "bez": "Eisbecher „Kugel Eismanufaktur\" 10MG (1400)", "geb": "KT (1400St)", "soll": 1, "preis": 102.63, "stand": "06.07", "cat": "reg"}, {"art": "0135182", "bez": "Eisbecher „Kugel Eismanufaktur\" M2 (960)", "geb": "KT (960St)", "soll": 1, "preis": 87.96, "stand": "06.07", "cat": "reg"}, {"art": "0135180", "bez": "Eisbecher „Kugel Eismanufaktur\" M4 (900)", "geb": "KT (900St)", "soll": 2, "preis": 102.63, "stand": "24.06", "cat": "occ"}, {"art": "0135183", "bez": "Eisbecher „Kugel Eismanufaktur\" MD4 (1000)", "geb": "KT (1000St)", "soll": 1, "preis": 108.79, "stand": "06.07", "cat": "occ"}, {"art": "0000104", "bez": "F+S Sahne 33% 5kg Eimer", "geb": "EI (5kg)", "soll": 11, "preis": 13.5, "stand": "06.07", "cat": "reg"}, {"art": "0000150", "bez": "Gastro Saure Sahne 10%", "geb": "PG (5kg)", "soll": 6, "preis": 12.05, "stand": "24.06", "cat": "occ"}, {"art": "0022196", "bez": "Gebas Pistazienstreusel geröstet 4-6mm 1kg", "geb": "BT (1kg)", "soll": 1, "preis": 33.9, "stand": "29.06", "cat": "occ"}, {"art": "0000409", "bez": "H-Milch 3,5% 12x1L Drehverschluss", "geb": "KT (12PG)", "soll": 6, "preis": 9.0, "stand": "06.07", "cat": "reg"}, {"art": "0000437", "bez": "H-Milch 3,5% Prago 10L Box", "geb": "PG (10L)", "soll": 60, "preis": 7.9, "stand": "24.06", "cat": "occ"}, {"art": "0034510", "bez": "Handtücher 25x23cm, 1-lagig, Natur (5000St)", "geb": "KT", "soll": 1, "preis": 20.2, "stand": "22.06", "cat": "occ"}, {"art": "0034512", "bez": "Handtücher z-Falz 20,3x24cm 2-lagig (3000)", "geb": "KT", "soll": 1, "preis": 39.9, "stand": "06.07", "cat": "reg"}, {"art": "0009708", "bez": "Kakao Rich Terracotta 5kg 20-22%", "geb": "PG (5kg)", "soll": 4, "preis": 64.65, "stand": "24.06", "cat": "occ"}, {"art": "0010569", "bez": "Kond.Raspel-Schoko Grob Bitter SRG", "geb": "KT (5kg)", "soll": 1, "preis": 59.95, "stand": "24.06", "cat": "occ"}, {"art": "0034520", "bez": "Küchenrollen 3-lagig (4 Rollen)", "geb": "PG", "soll": 4, "preis": 3.85, "stand": "24.06", "cat": "occ"}, {"art": "0293989", "bez": "Muss.Dichtungssatz P/B/L", "geb": "ST", "soll": 1, "preis": 17.5, "stand": "28.05", "cat": "occ"}, {"art": "0224149", "bez": "Nitrilhandschuhe, schwarz \"L\" ungep. (100)", "geb": "PG", "soll": 2, "preis": 5.04, "stand": "24.06", "cat": "occ"}, {"art": "0027523", "bez": "Papier-Trinkhalme Recyclable 220/8mm (250)", "geb": "BT (250St)", "soll": 1, "preis": 3.6, "stand": "06.07", "cat": "occ"}, {"art": "0027524", "bez": "Papier-Trinkhalme schwarz 230/8mm (150)", "geb": "BT (150St)", "soll": 5, "preis": 2.9, "stand": "15.06", "cat": "occ"}, {"art": "0011408", "bez": "Pistazien gehackt 2-4mm", "geb": "KG", "soll": 1, "preis": 34.29, "stand": "29.06", "cat": "occ"}, {"art": "0042122", "bez": "Plastik Flachdeckel 10MG/20C lizenziert", "geb": "KT (1400St)", "soll": 1, "preis": 73.92, "stand": "29.06", "cat": "occ"}, {"art": "0042176", "bez": "Plastik Flachdeckel M4/M70 lizenziert", "geb": "KT (1000St)", "soll": 1, "preis": 68.5, "stand": "22.06", "cat": "occ"}, {"art": "0038633", "bez": "ProHaag Hand Wash 5L", "geb": "KA", "soll": 1, "preis": 11.9, "stand": "06.07", "cat": "occ"}, {"art": "0031125", "bez": "Servietten weiss 1/4F. 33x33 (500)", "geb": "PG (500St)", "soll": 10, "preis": 4.79, "stand": "29.06", "cat": "occ"}, {"art": "0009880", "bez": "Sprüh-Magermilchpulver 1% VH", "geb": "SA (25kg)", "soll": 2, "preis": 97.0, "stand": "24.06", "cat": "occ"}, {"art": "0002242", "bez": "TK-CA Bio-Zitronensaft (EI)", "geb": "EI (10kg)", "soll": 2, "preis": 44.1, "stand": "24.06", "cat": "occ"}, {"art": "0002733", "bez": "TK-Erdbeeren Ägypten 10kg", "geb": "KT (10kg)", "soll": 6, "preis": 25.4, "stand": "29.06", "cat": "occ"}, {"art": "0034540", "bez": "Toilettenpap. 3-Lg. (8 Rollen)", "geb": "PG", "soll": 8, "preis": 4.2, "stand": "22.06", "cat": "occ"}, {"art": "0002750", "bez": "weiße Schokoraspel (Parmesan)", "geb": "KT (5kg)", "soll": 1, "preis": 50.2, "stand": "22.06", "cat": "occ"}, {"art": "0005306", "bez": "Weißzucker EU (NZ)", "geb": "SA (25kg)", "soll": 8, "preis": 18.5, "stand": "24.06", "cat": "occ"}]}};
+const DATA = {"prod": {"name": "Produktion", "sub": "Tannenstraße 19 · Kd 66975", "items": [{"art": "0041631", "bez": "40 Glutenfr. Hörnchen FJ103SG", "geb": "KT", "vorschlag": 1, "preis": 29.9, "stand": "28.05", "cat": "occ"}, {"art": "0060704", "bez": "6 OATLY Haferdrink Barista Edition 1l", "geb": "KT", "vorschlag": 4, "preis": 11.8, "stand": "30.06", "cat": "occ"}, {"art": "0009533", "bez": "Cal.Kuvert.Call.70/30/38", "geb": "SA (10kg)", "vorschlag": 2, "preis": 118.9, "stand": "08.06", "cat": "occ"}, {"art": "0027344", "bez": "Clear Cups klar 400ml inkl. EWK", "geb": "KT (800St)", "vorschlag": 1, "preis": 80.97, "stand": "30.06", "cat": "occ"}, {"art": "0027391", "bez": "Deckel, weiß für 200ml inkl. EWK", "geb": "PG (100St)", "vorschlag": 10, "preis": 2.66, "stand": "11.05", "cat": "occ"}, {"art": "0005321", "bez": "Dextrose Meritose 200", "geb": "SA (25kg)", "vorschlag": 2, "preis": 37.25, "stand": "06.07", "cat": "reg"}, {"art": "0027349", "bez": "DOM-Deckel klar mit Loch inkl. EWK", "geb": "KT (800St)", "vorschlag": 1, "preis": 41.31, "stand": "30.06", "cat": "occ"}, {"art": "0103466", "bez": "Eisbecher weiss GE-4M lizenziert", "geb": "KT (900St)", "vorschlag": 1, "preis": 113.81, "stand": "28.05", "cat": "occ"}, {"art": "0103461", "bez": "Eisbecher weiss GE-8 lizenziert", "geb": "KT (2000St)", "vorschlag": 1, "preis": 125.9, "stand": "30.06", "cat": "occ"}, {"art": "0135181", "bez": "Eisbecher „Kugel Eismanufaktur\" 10MG (1400)", "geb": "KT (1400St)", "vorschlag": 2, "preis": 102.63, "stand": "30.06", "cat": "occ"}, {"art": "0135184", "bez": "Eisbecher „Kugel Eismanufaktur\" 8B (2000)", "geb": "KT (2000St)", "vorschlag": 1, "preis": 121.36, "stand": "08.06", "cat": "occ"}, {"art": "0293595", "bez": "Eisbehälter 360x250x80mm 5,6L Edelstahl", "geb": "ST", "vorschlag": 100, "preis": 11.95, "stand": "31.05", "cat": "occ"}, {"art": "0293611", "bez": "Eisspachtel gelb transparent 260mm", "geb": "ST", "vorschlag": 5, "preis": 8.45, "stand": "13.05", "cat": "occ"}, {"art": "0042200", "bez": "Eisspaten Reusable bunt 9,5cm 1kg", "geb": "BT (1kg)", "vorschlag": 13, "preis": 6.75, "stand": "30.06", "cat": "occ"}, {"art": "0000104", "bez": "F+S Sahne 33% 5kg Eimer", "geb": "EI (5kg)", "vorschlag": 17, "preis": 13.5, "stand": "06.07", "cat": "reg"}, {"art": "0000684", "bez": "Frischkäse Doppelrahm", "geb": "EI (10kg)", "vorschlag": 2, "preis": 48.0, "stand": "08.06", "cat": "occ"}, {"art": "0005323", "bez": "Glukose Glucidex G290", "geb": "SA (25kg)", "vorschlag": 2, "preis": 27.25, "stand": "17.06", "cat": "occ"}, {"art": "0005384", "bez": "Glukose Glucidex IT33", "geb": "SA (25kg)", "vorschlag": 1, "preis": 41.0, "stand": "08.06", "cat": "occ"}, {"art": "0005322", "bez": "Glukose Glucodry G300", "geb": "SA (25kg)", "vorschlag": 2, "preis": 41.0, "stand": "06.07", "cat": "reg"}, {"art": "0000437", "bez": "H-Milch 3,5% Prago 10L Box", "geb": "PG (10L)", "vorschlag": 37, "preis": 7.9, "stand": "06.07", "cat": "reg"}, {"art": "0034510", "bez": "Handtücher 25x23cm, 1-lagig, Natur (5000St)", "geb": "KT", "vorschlag": 1, "preis": 20.2, "stand": "28.05", "cat": "occ"}, {"art": "0004723", "bez": "Inulin 25kg", "geb": "SA (25kg)", "vorschlag": 1, "preis": 102.5, "stand": "30.06", "cat": "reg"}, {"art": "0042220", "bez": "Kaffeelöffel Reusable bunt 13cm (3000St)", "geb": "KT", "vorschlag": 1, "preis": 42.0, "stand": "30.06", "cat": "occ"}, {"art": "0009708", "bez": "Kakao Rich Terracotta 5kg 20-22%", "geb": "PG (5kg)", "vorschlag": 4, "preis": 64.65, "stand": "08.06", "cat": "occ"}, {"art": "0010569", "bez": "Kond.Raspel-Schoko Grob Bitter SRG", "geb": "KT (5kg)", "vorschlag": 2, "preis": 69.45, "stand": "17.06", "cat": "occ"}, {"art": "0000692", "bez": "Mertens Joghurt 3,5% - stichfest -", "geb": "EI (10kg)", "vorschlag": 7, "preis": 15.4, "stand": "06.07", "cat": "occ"}, {"art": "0034646", "bez": "Mussana Microclean Reiniger 1l", "geb": "FL", "vorschlag": 4, "preis": 9.29, "stand": "30.06", "cat": "occ"}, {"art": "0034550", "bez": "Müllbeutel, blau 120L (25)", "geb": "RO", "vorschlag": 10, "preis": 4.2, "stand": "28.05", "cat": "occ"}, {"art": "0224149", "bez": "Nitrilhandschuhe, schwarz \"L\" ungep. (100)", "geb": "PG", "vorschlag": 2, "preis": 5.04, "stand": "28.05", "cat": "occ"}, {"art": "0027524", "bez": "Papier-Trinkhalme schwarz 230/8mm (150)", "geb": "BT (150St)", "vorschlag": 5, "preis": 2.9, "stand": "17.06", "cat": "reg"}, {"art": "0011408", "bez": "Pistazien gehackt 2-4mm", "geb": "KG", "vorschlag": 3, "preis": 34.29, "stand": "30.06", "cat": "occ"}, {"art": "0038641", "bez": "ProHaag Flächendesinfektion Ipades 70 1L", "geb": "FL", "vorschlag": 2, "preis": 8.5, "stand": "28.05", "cat": "occ"}, {"art": "0041942", "bez": "Prova Vanille gemahlen 200gr.", "geb": "DS (0,2kg)", "vorschlag": 1, "preis": 31.8, "stand": "28.05", "cat": "occ"}, {"art": "0042436", "bez": "Pulisano Bourbon-Vanille fein gem. 1kg", "geb": "BT (1kg)", "vorschlag": 1, "preis": 110.0, "stand": "20.05", "cat": "occ"}, {"art": "0042442", "bez": "Pulisano Cashewmus", "geb": "EI (3kg)", "vorschlag": 3, "preis": 42.6, "stand": "06.07", "cat": "occ"}, {"art": "0042393", "bez": "Pulisano Erdnussmark 100%", "geb": "DS (5kg)", "vorschlag": 3, "preis": 49.75, "stand": "30.06", "cat": "occ"}, {"art": "0010745", "bez": "RB Haselnusskrokant 40% Nussanteil", "geb": "EI (3,5kg)", "vorschlag": 1, "preis": 39.8, "stand": "28.05", "cat": "occ"}, {"art": "0010667", "bez": "Regeneriersalz grob 6x2kg", "geb": "KT", "vorschlag": 2, "preis": 18.27, "stand": "30.06", "cat": "occ"}, {"art": "0005280", "bez": "Regenit Regeneriersalz", "geb": "SA (25kg)", "vorschlag": 4, "preis": 10.5, "stand": "28.05", "cat": "occ"}, {"art": "0028277", "bez": "Rollenpapier „Kugel Eismanufaktur\" 10kg", "geb": "ST (10kg)", "vorschlag": 1, "preis": 50.55, "stand": "11.05", "cat": "occ"}, {"art": "0032300", "bez": "Sahneabdeckpapier 12x18", "geb": "PG (1000St)", "vorschlag": 3, "preis": 4.47, "stand": "26.05", "cat": "occ"}, {"art": "0032310", "bez": "Sahneabdeckpapier 24x36", "geb": "PG (1000St)", "vorschlag": 4, "preis": 17.27, "stand": "08.06", "cat": "occ"}, {"art": "0031125", "bez": "Servietten weiss 1/4F. 33x33 (500)", "geb": "PG (500St)", "vorschlag": 10, "preis": 4.79, "stand": "28.05", "cat": "occ"}, {"art": "0009874", "bez": "Sprüh-Magermilchpulver 1% NG", "geb": "SA (25kg)", "vorschlag": 2, "preis": 101.0, "stand": "30.06", "cat": "occ"}, {"art": "0009880", "bez": "Sprüh-Magermilchpulver 1% VH", "geb": "SA (25kg)", "vorschlag": 1, "preis": 97.0, "stand": "28.05", "cat": "occ"}, {"art": "0000958", "bez": "TK-Beerenmix (10kg)", "geb": "KT (10kg)", "vorschlag": 6, "preis": 40.2, "stand": "06.07", "cat": "occ"}, {"art": "0000955", "bez": "TK-Beerenmix (2,5kg)", "geb": "PG (2,5kg)", "vorschlag": 9, "preis": 10.2, "stand": "28.05", "cat": "occ"}, {"art": "0002242", "bez": "TK-CA Bio-Zitronensaft (EI)", "geb": "EI (10kg)", "vorschlag": 4, "preis": 44.1, "stand": "06.07", "cat": "reg"}, {"art": "0002241", "bez": "TK-CA Bio-Zitronensaft 12x1kg", "geb": "KT (12kg)", "vorschlag": 2, "preis": 52.92, "stand": "28.05", "cat": "occ"}, {"art": "0002733", "bez": "TK-Erdbeeren Ägypten 10kg", "geb": "KT (10kg)", "vorschlag": 5, "preis": 25.4, "stand": "06.07", "cat": "reg"}, {"art": "0002272", "bez": "TK-PT Himbeeren Willamette gez. 10%", "geb": "KT (6kg)", "vorschlag": 6, "preis": 55.92, "stand": "06.07", "cat": "occ"}, {"art": "0002088", "bez": "TK-RF Zitronensaft 500g", "geb": "KT (12PG)", "vorschlag": 2, "preis": 36.72, "stand": "08.06", "cat": "occ"}, {"art": "0034540", "bez": "Toilettenpap. 3-Lg. (8 Rollen)", "geb": "PG", "vorschlag": 7, "preis": 4.2, "stand": "08.06", "cat": "occ"}, {"art": "0002750", "bez": "weiße Schokoraspel (Parmesan)", "geb": "KT (5kg)", "vorschlag": 2, "preis": 50.2, "stand": "29.06", "cat": "occ"}, {"art": "0005306", "bez": "Weißzucker EU (NZ)", "geb": "SA (25kg)", "vorschlag": 9, "preis": 18.5, "stand": "30.06", "cat": "reg"}, {"art": "0040790", "bez": "Zuckerstreusel, bunt", "geb": "PG (1kg)", "vorschlag": 12, "preis": 6.45, "stand": "28.05", "cat": "occ"}]}, "verk": {"name": "Verkauf", "sub": "Nordstraße 117 · Kd 66974", "items": [{"art": "0041755", "bez": "220 Schoko-Röllchen", "geb": "PG", "vorschlag": 3, "preis": 17.49, "stand": "22.06", "cat": "occ"}, {"art": "0060704", "bez": "6 OATLY Haferdrink Barista Edition 1l", "geb": "KT", "vorschlag": 3, "preis": 11.8, "stand": "20.05", "cat": "occ"}, {"art": "0040755", "bez": "Amaretti Plätzchen", "geb": "KT (2kg)", "vorschlag": 1, "preis": 18.2, "stand": "20.05", "cat": "occ"}, {"art": "0009533", "bez": "Cal.Kuvert.Call.70/30/38", "geb": "SA (10kg)", "vorschlag": 1, "preis": 118.9, "stand": "24.06", "cat": "occ"}, {"art": "0027344", "bez": "Clear Cups klar 400ml inkl. EWK", "geb": "KT (800St)", "vorschlag": 1, "preis": 80.97, "stand": "29.06", "cat": "occ"}, {"art": "0005321", "bez": "Dextrose Meritose 200", "geb": "SA (25kg)", "vorschlag": 2, "preis": 37.25, "stand": "24.06", "cat": "occ"}, {"art": "0027349", "bez": "DOM-Deckel klar mit Loch inkl. EWK", "geb": "KT (800St)", "vorschlag": 1, "preis": 41.31, "stand": "29.06", "cat": "occ"}, {"art": "0042110", "bez": "Eisbecher 105ml 8B Flach lizenziert", "geb": "KT (2000St)", "vorschlag": 1, "preis": 125.9, "stand": "15.06", "cat": "occ"}, {"art": "0103461", "bez": "Eisbecher weiss GE-8 lizenziert", "geb": "KT (2000St)", "vorschlag": 2, "preis": 125.9, "stand": "24.06", "cat": "occ"}, {"art": "0135181", "bez": "Eisbecher „Kugel Eismanufaktur\" 10MG (1400)", "geb": "KT (1400St)", "vorschlag": 1, "preis": 102.63, "stand": "06.07", "cat": "reg"}, {"art": "0135182", "bez": "Eisbecher „Kugel Eismanufaktur\" M2 (960)", "geb": "KT (960St)", "vorschlag": 1, "preis": 87.96, "stand": "06.07", "cat": "reg"}, {"art": "0135180", "bez": "Eisbecher „Kugel Eismanufaktur\" M4 (900)", "geb": "KT (900St)", "vorschlag": 2, "preis": 102.63, "stand": "24.06", "cat": "occ"}, {"art": "0135183", "bez": "Eisbecher „Kugel Eismanufaktur\" MD4 (1000)", "geb": "KT (1000St)", "vorschlag": 1, "preis": 108.79, "stand": "06.07", "cat": "occ"}, {"art": "0000104", "bez": "F+S Sahne 33% 5kg Eimer", "geb": "EI (5kg)", "vorschlag": 11, "preis": 13.5, "stand": "06.07", "cat": "reg"}, {"art": "0000150", "bez": "Gastro Saure Sahne 10%", "geb": "PG (5kg)", "vorschlag": 6, "preis": 12.05, "stand": "24.06", "cat": "occ"}, {"art": "0022196", "bez": "Gebas Pistazienstreusel geröstet 4-6mm 1kg", "geb": "BT (1kg)", "vorschlag": 1, "preis": 33.9, "stand": "29.06", "cat": "occ"}, {"art": "0000409", "bez": "H-Milch 3,5% 12x1L Drehverschluss", "geb": "KT (12PG)", "vorschlag": 6, "preis": 9.0, "stand": "06.07", "cat": "reg"}, {"art": "0000437", "bez": "H-Milch 3,5% Prago 10L Box", "geb": "PG (10L)", "vorschlag": 60, "preis": 7.9, "stand": "24.06", "cat": "occ"}, {"art": "0034510", "bez": "Handtücher 25x23cm, 1-lagig, Natur (5000St)", "geb": "KT", "vorschlag": 1, "preis": 20.2, "stand": "22.06", "cat": "occ"}, {"art": "0034512", "bez": "Handtücher z-Falz 20,3x24cm 2-lagig (3000)", "geb": "KT", "vorschlag": 1, "preis": 39.9, "stand": "06.07", "cat": "reg"}, {"art": "0009708", "bez": "Kakao Rich Terracotta 5kg 20-22%", "geb": "PG (5kg)", "vorschlag": 4, "preis": 64.65, "stand": "24.06", "cat": "occ"}, {"art": "0010569", "bez": "Kond.Raspel-Schoko Grob Bitter SRG", "geb": "KT (5kg)", "vorschlag": 1, "preis": 59.95, "stand": "24.06", "cat": "occ"}, {"art": "0034520", "bez": "Küchenrollen 3-lagig (4 Rollen)", "geb": "PG", "vorschlag": 4, "preis": 3.85, "stand": "24.06", "cat": "occ"}, {"art": "0293989", "bez": "Muss.Dichtungssatz P/B/L", "geb": "ST", "vorschlag": 1, "preis": 17.5, "stand": "28.05", "cat": "occ"}, {"art": "0224149", "bez": "Nitrilhandschuhe, schwarz \"L\" ungep. (100)", "geb": "PG", "vorschlag": 2, "preis": 5.04, "stand": "24.06", "cat": "occ"}, {"art": "0027523", "bez": "Papier-Trinkhalme Recyclable 220/8mm (250)", "geb": "BT (250St)", "vorschlag": 1, "preis": 3.6, "stand": "06.07", "cat": "occ"}, {"art": "0027524", "bez": "Papier-Trinkhalme schwarz 230/8mm (150)", "geb": "BT (150St)", "vorschlag": 5, "preis": 2.9, "stand": "15.06", "cat": "occ"}, {"art": "0011408", "bez": "Pistazien gehackt 2-4mm", "geb": "KG", "vorschlag": 1, "preis": 34.29, "stand": "29.06", "cat": "occ"}, {"art": "0042122", "bez": "Plastik Flachdeckel 10MG/20C lizenziert", "geb": "KT (1400St)", "vorschlag": 1, "preis": 73.92, "stand": "29.06", "cat": "occ"}, {"art": "0042176", "bez": "Plastik Flachdeckel M4/M70 lizenziert", "geb": "KT (1000St)", "vorschlag": 1, "preis": 68.5, "stand": "22.06", "cat": "occ"}, {"art": "0038633", "bez": "ProHaag Hand Wash 5L", "geb": "KA", "vorschlag": 1, "preis": 11.9, "stand": "06.07", "cat": "occ"}, {"art": "0031125", "bez": "Servietten weiss 1/4F. 33x33 (500)", "geb": "PG (500St)", "vorschlag": 10, "preis": 4.79, "stand": "29.06", "cat": "occ"}, {"art": "0009880", "bez": "Sprüh-Magermilchpulver 1% VH", "geb": "SA (25kg)", "vorschlag": 2, "preis": 97.0, "stand": "24.06", "cat": "occ"}, {"art": "0002242", "bez": "TK-CA Bio-Zitronensaft (EI)", "geb": "EI (10kg)", "vorschlag": 2, "preis": 44.1, "stand": "24.06", "cat": "occ"}, {"art": "0002733", "bez": "TK-Erdbeeren Ägypten 10kg", "geb": "KT (10kg)", "vorschlag": 6, "preis": 25.4, "stand": "29.06", "cat": "occ"}, {"art": "0034540", "bez": "Toilettenpap. 3-Lg. (8 Rollen)", "geb": "PG", "vorschlag": 8, "preis": 4.2, "stand": "22.06", "cat": "occ"}, {"art": "0002750", "bez": "weiße Schokoraspel (Parmesan)", "geb": "KT (5kg)", "vorschlag": 1, "preis": 50.2, "stand": "22.06", "cat": "occ"}, {"art": "0005306", "bez": "Weißzucker EU (NZ)", "geb": "SA (25kg)", "vorschlag": 8, "preis": 18.5, "stand": "24.06", "cat": "occ"}]}};
 const state = { filiale:"prod", tab:"count" };
-const KEY = f => "kugel_"+f;
+const KEY = f => "kugel_qty_"+f;
 
-function load(f){
-  try{ const raw=localStorage.getItem(KEY(f)); return raw?JSON.parse(raw):{}; }
-  catch(e){ return {}; }
-}
-function save(f,obj){ try{ localStorage.setItem(KEY(f),JSON.stringify(obj)); }catch(e){} }
+function load(f){ try{ const r=localStorage.getItem(KEY(f)); return r?JSON.parse(r):{}; }catch(e){ return {}; } }
+function save(f,o){ try{ localStorage.setItem(KEY(f),JSON.stringify(o)); }catch(e){} }
 function store(){ return load(state.filiale); }
-function setItem(art,patch){
-  const s=store(); s[art]=Object.assign({},s[art],patch); save(state.filiale,s);
-}
-function getSoll(it,s){ return (s[it.art]&&s[it.art].soll!=null)?s[it.art].soll:it.soll; }
-function getIst(it,s){ return (s[it.art]&&s[it.art].ist!=null)?s[it.art].ist:0; }
-function orderQty(it,s){ return Math.max(0, getSoll(it,s)-getIst(it,s)); }
+function getQty(art){ const s=store(); return s[art]!=null?s[art]:0; }
+function setQty(art,q){ const s=store(); q=Math.max(0,q|0); if(q===0) delete s[art]; else s[art]=q; save(state.filiale,s); }
 
-function toast(msg){
-  const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show");
-  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),1600);
-}
+function toast(msg){ const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),1600); }
 
 function renderFiliale(){
   const seg=document.getElementById("filialeSeg"); seg.innerHTML="";
-  Object.keys(DATA).forEach(f=>{
-    const b=document.createElement("button");
+  Object.keys(DATA).forEach(f=>{ const b=document.createElement("button");
     b.textContent=DATA[f].name; if(f===state.filiale)b.className="on";
-    b.onclick=()=>{ state.filiale=f; render(); };
-    seg.appendChild(b);
-  });
+    b.onclick=()=>{ state.filiale=f; render(); }; seg.appendChild(b); });
   document.getElementById("subline").textContent=DATA[state.filiale].sub;
 }
-function renderTabs(){
-  document.querySelectorAll("#tabSeg button").forEach(b=>{
-    b.classList.toggle("on", b.dataset.tab===state.tab);
-    b.onclick=()=>{ state.tab=b.dataset.tab; render(); };
-  });
-}
+function renderTabs(){ document.querySelectorAll("#tabSeg button").forEach(b=>{
+  b.classList.toggle("on", b.dataset.tab===state.tab);
+  b.onclick=()=>{ state.tab=b.dataset.tab; render(); }; }); }
 
 function card(it){
-  const s=store(); const ist=getIst(it,s); const soll=getSoll(it,s); const oq=orderQty(it,s);
-  const el=document.createElement("div"); el.className="card"+(oq>0?" need":"");
+  const q=getQty(it.art);
+  const el=document.createElement("div"); el.className="card"+(q>0?" need":"");
   el.innerHTML=`
     <div>
       <div class="nm">${it.bez}</div>
@@ -189,93 +137,91 @@ function card(it){
     </div>
     <div class="stepper">
       <button aria-label="weniger">−</button>
-      <input type="number" inputmode="numeric" value="${ist}" min="0">
+      <input type="number" inputmode="numeric" value="${q}" min="0">
       <button aria-label="mehr">+</button>
     </div>
-    <div class="soll-edit">Soll <input type="number" inputmode="numeric" value="${soll}" min="0"> ${it.geb.split(' ')[0]}</div>
-    ${oq>0?`<div class="order-badge">→ ${oq} bestellen</div>`:``}
-  `;
+    <div class="suggest">
+      <button class="chip">Vorschlag <b>${it.vorschlag}</b></button>
+      <button class="clr" style="${q>0?'':'display:none'}">zurücksetzen</button>
+    </div>`;
   const [minus,plus]=el.querySelectorAll(".stepper button");
   const inp=el.querySelector(".stepper input");
-  const sollInp=el.querySelector(".soll-edit input");
-  const commit=()=>{ setItem(it.art,{ist:Math.max(0,parseInt(inp.value||0))}); refreshCard(el,it); };
-  minus.onclick=()=>{ inp.value=Math.max(0,(parseInt(inp.value||0))-1); commit(); };
-  plus.onclick=()=>{ inp.value=(parseInt(inp.value||0))+1; commit(); };
-  inp.onchange=commit;
-  sollInp.onchange=()=>{ setItem(it.art,{soll:Math.max(0,parseInt(sollInp.value||0))}); refreshCard(el,it); };
+  const chip=el.querySelector(".chip");
+  const clr=el.querySelector(".clr");
+  const commit=v=>{ v=Math.max(0,parseInt(v||0)); inp.value=v; setQty(it.art,v);
+    el.classList.toggle("need",v>0); clr.style.display=v>0?"":"none"; };
+  minus.onclick=()=>commit((parseInt(inp.value||0))-1);
+  plus.onclick =()=>commit((parseInt(inp.value||0))+1);
+  inp.onchange =()=>commit(inp.value);
+  chip.onclick =()=>commit(it.vorschlag);
+  clr.onclick  =()=>commit(0);
   return el;
-}
-function refreshCard(el,it){
-  const s=store(); const oq=orderQty(it,s);
-  el.classList.toggle("need",oq>0);
-  let badge=el.querySelector(".order-badge");
-  if(oq>0){
-    if(!badge){ badge=document.createElement("div"); badge.className="order-badge"; el.appendChild(badge); }
-    badge.textContent=`→ ${oq} bestellen`;
-  } else if(badge){ badge.remove(); }
 }
 
 function renderCount(){
   const main=document.getElementById("main"); main.innerHTML="";
+  const h=document.createElement("div"); h.className="hint";
+  h.textContent="Tippe pro Artikel die Bestellmenge (in Gebinden) ein. Der graue Vorschlag ist unverbindlich – ein Tipp übernimmt ihn, muss aber nicht.";
+  main.appendChild(h);
   const items=DATA[state.filiale].items;
   [["reg","Regelmäßig"],["occ","Gelegentlich / bei Bedarf"]].forEach(([cat,label])=>{
-    const group=items.filter(i=>i.cat===cat);
-    if(!group.length) return;
-    const h=document.createElement("div"); h.className="cathead"; h.textContent=label;
-    main.appendChild(h);
+    const group=items.filter(i=>i.cat===cat); if(!group.length) return;
+    const hd=document.createElement("div"); hd.className="cathead"; hd.textContent=label; main.appendChild(hd);
     group.forEach(it=>main.appendChild(card(it)));
   });
   document.getElementById("actions").style.display="none";
 }
 
-function orderLines(){
-  const s=store();
-  return DATA[state.filiale].items
-    .map(it=>({it,q:orderQty(it,s)}))
-    .filter(x=>x.q>0)
-    .sort((a,b)=>a.it.bez.localeCompare(b.it.bez));
-}
+function orderLines(){ const s=store();
+  return DATA[state.filiale].items.map(it=>({it,q:s[it.art]||0})).filter(x=>x.q>0)
+    .sort((a,b)=>a.it.bez.localeCompare(b.it.bez)); }
+
 function renderOrder(){
   const main=document.getElementById("main"); main.innerHTML="";
   const wrap=document.createElement("div"); wrap.className="order-wrap"; main.appendChild(wrap);
   const lines=orderLines();
   if(!lines.length){
-    wrap.innerHTML=`<div class="order-empty"><b>Noch nichts zu bestellen</b>Zähl im Reiter „Zählen“ die Bestände. Alles, wo der Ist-Bestand unter dem Soll liegt, erscheint hier.</div>`;
-    document.getElementById("actions").style.display="none";
-    return;
+    wrap.innerHTML=`<div class="order-empty"><b>Noch nichts ausgewählt</b>Geh auf „Bestellen“ und tippe bei den Artikeln die gewünschte Menge ein.</div>`;
+    document.getElementById("actions").style.display="none"; return;
   }
-  let sum=0;
+  const t=document.createElement("div"); t.className="total";
+  function recalcTotal(){ let s=0; orderLines().forEach(({it,q})=>s+=q*it.preis);
+    t.innerHTML=`<span>Geschätzter Warenwert (netto)</span><b>${s.toFixed(2).replace('.',',')} €</b>`; }
   lines.forEach(({it,q})=>{
-    sum+=q*it.preis;
     const l=document.createElement("div"); l.className="oline";
-    l.innerHTML=`<div class="q">${q}×</div>
+    l.innerHTML=`
+      <div class="ministep">
+        <button aria-label="weniger">−</button>
+        <input type="number" inputmode="numeric" value="${q}" min="0">
+        <button aria-label="mehr">+</button>
+      </div>
       <div class="t">${it.bez}<div class="g">${it.geb}</div></div>
-      <div class="s">${(q*it.preis).toFixed(2).replace('.',',')} €</div>`;
+      <div class="s"></div>`;
+    const [minus,plus]=l.querySelectorAll(".ministep button");
+    const inp=l.querySelector(".ministep input");
+    const priceEl=l.querySelector(".s");
+    const paint=v=>{ priceEl.textContent=(v*it.preis).toFixed(2).replace('.',',')+" €"; };
+    paint(q);
+    const commit=v=>{ v=Math.max(0,parseInt(v||0)); setQty(it.art,v);
+      if(v===0){ l.remove(); recalcTotal(); if(!orderLines().length) renderOrder(); return; }
+      inp.value=v; paint(v); recalcTotal(); };
+    minus.onclick=()=>commit((parseInt(inp.value||0))-1);
+    plus.onclick =()=>commit((parseInt(inp.value||0))+1);
+    inp.onchange =()=>commit(inp.value);
     wrap.appendChild(l);
   });
-  const t=document.createElement("div"); t.className="total";
-  t.innerHTML=`<span>Geschätzter Warenwert (netto)</span><b>${sum.toFixed(2).replace('.',',')} €</b>`;
-  wrap.appendChild(t);
-
+  recalcTotal(); wrap.appendChild(t);
   const act=document.getElementById("actions"); act.style.display="flex"; act.innerHTML="";
   const copy=document.createElement("button"); copy.className="btn primary"; copy.textContent="Bestellung kopieren";
-  copy.onclick=()=>{ const txt=orderText(); navigator.clipboard.writeText(txt).then(()=>toast("Bestellung kopiert")).catch(()=>toast("Kopieren nicht möglich")); };
+  copy.onclick=()=>navigator.clipboard.writeText(orderText()).then(()=>toast("Bestellung kopiert")).catch(()=>toast("Kopieren nicht möglich"));
   const mail=document.createElement("button"); mail.className="btn ghost"; mail.textContent="✉︎";
-  mail.onclick=()=>{ const d=DATA[state.filiale]; location.href="mailto:info@hefe-van-haag.de?subject="+encodeURIComponent("Bestellung Kugel UG – "+d.name)+"&body="+encodeURIComponent(orderText()); };
+  mail.onclick=()=>{ const d=DATA[state.filiale];
+    location.href="mailto:info@hefe-van-haag.de?subject="+encodeURIComponent("Bestellung Kugel UG – "+d.name)+"&body="+encodeURIComponent(orderText()); };
   act.appendChild(copy); act.appendChild(mail);
 }
-function orderText(){
-  const d=DATA[state.filiale]; const lines=orderLines();
-  const today=new Date().toLocaleDateString("de-DE");
-  let out=`Bestellung – Kugel UG / ${d.name}
-${d.sub}
-Datum: ${today}
-
-`;
-  lines.forEach(({it,q})=>{ out+=`${q}x  ${it.bez}  (${it.geb})
-`; });
-  return out;
-}
+function orderText(){ const d=DATA[state.filiale]; const today=new Date().toLocaleDateString("de-DE");
+  let out=`Bestellung – Kugel UG / ${d.name}\n${d.sub}\nDatum: ${today}\n\n`;
+  orderLines().forEach(({it,q})=>{ out+=`${q}x  ${it.bez}  (${it.geb})\n`; }); return out; }
 
 function render(){ renderFiliale(); renderTabs(); state.tab==="count"?renderCount():renderOrder(); }
 render();
